@@ -25,7 +25,7 @@ const int PERFECT=50;
 const int GREAT=70;
 const int GOOD=90;
 
-std::string PATH="/Users/jasonzhao/Desktop/Qt/merge/GameWindow/"; //改成当前这个项目中的第一层文件所在的路径
+std::string PATH="/Users/jasonzhao/Desktop/Qt/up/GameWindow/"; //改成当前这个项目中的第一层文件所在的路径
 std::string songName;
 int songID=0;
 
@@ -77,7 +77,7 @@ NoteHandler::NoteHandler(QWidget* _gameWindow){
        Note* newNote=new Note(gameWindow,DURATION,moveTimeArr[i],laneArr[i]);
        connect(&newNote->note_drop,SIGNAL(finished()),newNote,SLOT(passData())); //数据传输——late miss
        connect(newNote,SIGNAL(dataUpdate(bool,int,int)),this,SLOT(dataUpdate(bool,int,int)));
-       QTimer::singleShot(BASETIME+moveTimeArr[i],Qt::PreciseTimer,newNote,SLOT(startMove()));
+       QTimer::singleShot(BASETIME+moveTimeArr[i]-DURATION+1050,Qt::PreciseTimer,newNote,SLOT(startMove()));
        handledNotes[laneArr[i]].push(newNote);
    }
 
