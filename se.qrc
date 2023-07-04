@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/se">
+        <file>soundeffects/shutter_close.wav</file>
+        <file>soundeffects/shutter_open.wav</file>
+    </qresource>
+</RCC>
